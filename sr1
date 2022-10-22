@@ -1,0 +1,26 @@
+x=input()
+if len(x) in range(3,7):
+    print('Введите четыре числа >>>')
+    a=float(input())
+    b=float(input())
+    c=float(input())
+    d=float(input())
+    e=min(a,b,c,d)
+    f=max(a,b,c,d)
+    g=((a*b*c*d)/min(a,b,c,d))/max(a,b,c,d)
+    print('min =',e,'max =',f,'result =',g)
+elif len(x) in range(11,15):
+   k=len(x)**(len(x)-8)
+   print(k)
+   if  len(str(k))==6:
+       print(max(k))
+elif len(x) in range(20,30):
+    print('Введите строку >>>')
+    l=str(input())
+    if 'до' in l or 'ре' in l:
+        print('Музыкальная пауза!')
+    else:
+        print('Чайная пауза!')
+else:
+    print('Строка не попала в множество!')
+    
