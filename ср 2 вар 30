@@ -1,0 +1,16 @@
+№4
+import math
+s=0
+for n in range(2,6):
+    s+=1/((2*n-3)**(2/3))
+print(s)
+№5
+n=int(input('введите матрицу NxN: '))
+for i in range(1,n+1):
+    k=''
+    for j in range(1,n+1):
+        if i==1 or j==1 or j==n or i==n:
+            k+='5 '
+        else:
+            k+='2 '
+    print(k)
