@@ -1,0 +1,29 @@
+import random
+class MedicineRecipe:
+    medication_list = ['Ибупрофен', 'Леводопа', 'Амоксициллин', 'Эритромицин', 'Тамоксифен', 'Варфарин']
+    recipe_templates = []
+
+    def __init__(self, disease, prescribed_medicine):
+        self.disease = disease
+        self.prescribed_medicine = prescribed_medicine
+        self.generate_recipe(disease, prescribed_medicine)
+
+    def generate_recipe(self, disease, prescribed_medicine):
+            if prescribed_medicine not in self.medication_list:
+                self.medication_list.append(prescribed_medicine)
+                recipe_id = random.randint(1000, 9999)
+                recipe = {"Болезнь": disease, "Лекарство": prescribed_medicine, "Идентификатор рецепта": recipe_id}
+                self.recipe_templates.append(recipe)
+
+    @classmethod
+    def get_recipes(cls):
+        for recipe in cls.recipe_templates:
+            print(f'Болезнь: {recipe["Болезнь"]}, Лекарство: {recipe["Лекарство"]}, Идентификатор рецепта: {recipe["Идентификатор рецепта"]}')
+
+# Пример создания объекта и вызова классового метода
+
+recipe1 = MedicineRecipe("Грипп", "Ибупрофен")
+recipe2 = MedicineRecipe("Бронхит", "Амоксициллин")
+recipe3 = MedicineRecipe("Ангина", "Амоксициллин")
+
+MedicineRecipe.get_recipes()
